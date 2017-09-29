@@ -16,9 +16,8 @@ RUN \
   #   eslint \
   #   uglify-js && \
 RUN \
+  node --version && \
   npm --version && \
-  npm i -g npm@5 yarn
-  npm \
-    rebuild node-sass
+  yarn --version
 
 WORKDIR /work
