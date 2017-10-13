@@ -1,14 +1,15 @@
 FROM electronuserland/electron-builder:wine
 
 RUN \
+  curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
   apt-get update && \
   apt-get install --no-install-recommends -y \
     \
     less \
     file \
+    git-lfs \
     \
   && \
-  curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash \
   && \
   apt-get clean && rm -rf /var/lib/apt/lists/*
 
