@@ -8,7 +8,8 @@ RUN \
     file \
     \
   && \
-  apt-get remove software-properties-common -y && \
+  curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash \
+  && \
   apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # RUN \
@@ -19,5 +20,3 @@ RUN \
   node --version && \
   npm --version && \
   yarn --version
-
-WORKDIR /work
