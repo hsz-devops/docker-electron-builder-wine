@@ -1,13 +1,11 @@
-FROM electronuserland/electron-builder:wine
+FROM electronuserland/builder:wine
 
 RUN \
-  curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
   apt-get update && \
   apt-get install --no-install-recommends -y \
     \
     less \
     file \
-    git-lfs \
     ruby-dev \
     \
   && \
