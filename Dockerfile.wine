@@ -16,11 +16,12 @@ RUN \
   && \
   apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# RUN \
-  # npm i -g \
-  #   eslint \
-  #   uglify-js && \
+# we want to make sure we are running updated versions of yarn and npm
 RUN \
+  git  --version && \
+  git-lfs version && \
   node --version && \
+  yarn --version && \
+  yarn global add npm && \
   npm --version && \
-  yarn --version
+  echo "done!"
